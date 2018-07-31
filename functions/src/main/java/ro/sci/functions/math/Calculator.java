@@ -13,7 +13,7 @@ public class Calculator {
      * @return sum of x and y
      */
     public int aduna(int x, int y) {
-        return x+y;
+       return x+y;
     }
 
     /**
@@ -26,6 +26,7 @@ public class Calculator {
         if (n == 0 || n ==1) {
             return n;
         }
+
         return fibonacci(n-1) + fibonacci(n-2);
     }
 }
