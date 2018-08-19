@@ -1,14 +1,13 @@
 package ro.sciit.oop.homework2;
 
 public class SmartSecurityCamera implements ElectricityConsumer {
+
     private static float camera_consumption = 25.0F;
     private boolean isFilming;
     private boolean isOn;
     private String state;
     private String filmState;
 
-    public SmartSecurityCamera() {
-    }
 
     public void turnOn(boolean on) {
         this.isOn = on;
@@ -40,12 +39,18 @@ public class SmartSecurityCamera implements ElectricityConsumer {
 
     }
 
+    /**
+     *
+     * @return camera_consumption if boolean isOn = true, otherwise returns 0
+     */
     public float calculateConsumption() {
         return this.isOn && this.isFilming ? camera_consumption : 0.0F;
     }
 
+    /**
+     * prints camera state
+     */
     public void getState() {
-        System.out.println(this.filmState);
         System.out.println("Current camera state is " + this.state);
     }
 }

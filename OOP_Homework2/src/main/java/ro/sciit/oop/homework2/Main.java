@@ -9,9 +9,12 @@ public class Main {
             host.turnLampsOff();
             host.turnLampsOn();
             host.turnCamerasOn();
+
             host.startFilming();
             host.getLampState();
+            host.getCameraState();
             host.turnThermostatsOn();
+            host.getThermostatState();
             host.getConsumers();
             float consumption = host.calculateConsumption();
             System.out.println(consumption + " KW/h");

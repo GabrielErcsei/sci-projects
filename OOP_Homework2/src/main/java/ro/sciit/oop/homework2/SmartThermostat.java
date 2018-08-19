@@ -37,10 +37,17 @@ public class SmartThermostat implements ElectricityConsumer {
 
     }
 
+    /**
+     *
+     * @return thermo_consumption if boolean isOn = true, otherwise returns 0
+     */
     public float calculateConsumption() {
         return this.isOn ? thermo_consumption : 0.0F;
     }
 
+    /**
+     * prints thermostat state
+     */
     public void getState() {
         System.out.println("The current thermostat state is " + this.state);
     }

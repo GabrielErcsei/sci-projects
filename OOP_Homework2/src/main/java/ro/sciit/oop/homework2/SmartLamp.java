@@ -48,10 +48,17 @@ public class SmartLamp implements ElectricityConsumer {
         return this.color;
     }
 
+    /**
+     *
+     * @return lamp_consumption if boolean isOn = true, otherwise returns 0
+     */
     public float calculateConsumption() {
         return this.isOn ? lamp_consumption : 0.0F;
     }
 
+    /**
+     * prints lamp state
+     */
     public void getState() {
         System.out.println("The current lamp state is " + this.state);
     }

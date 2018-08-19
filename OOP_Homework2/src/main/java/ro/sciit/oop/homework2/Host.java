@@ -2,30 +2,29 @@ package ro.sciit.oop.homework2;
 
 public class Host {
     private ElectricityConsumer[] consumers = new ElectricityConsumer[100];
-    private int consumerCount = 0;
 
     public Host() {
-        this.consumers[0] = new SmartLamp();
-        this.consumers[1] = new SmartSecurityCamera();
-        this.consumers[2] = new SmartThermostat();
-        this.consumers[3] = new SmartThermostat();
-        this.consumers[4] = new SmartLamp();
-        this.consumers[5] = new SmartLamp();
-        this.consumers[6] = new SmartLamp();
-        this.consumers[7] = new SmartSecurityCamera();
+        consumers[0] = new SmartLamp();
+        consumers[1] = new SmartSecurityCamera();
+        consumers[2] = new SmartThermostat();
+        consumers[3] = new SmartThermostat();
+        consumers[4] = new SmartLamp();
+        consumers[5] = new SmartLamp();
+        consumers[6] = new SmartLamp();
+        consumers[7] = new SmartSecurityCamera();
     }
 
+    /**
+     * prints the consumers in the array
+     */
     public void getConsumers() {
         System.out.println(consumers);
     }
 
     public void turnLampsOn() {
-        ElectricityConsumer[] var1 = this.consumers;
-        int var2 = var1.length;
 
-        for(int var3 = 0; var3 < var2; ++var3) {
-            ElectricityConsumer sl = var1[var3];
-            if (sl != null && sl instanceof SmartLamp) {
+        for(ElectricityConsumer sl : consumers) {
+            if (sl instanceof SmartLamp) {
                 ((SmartLamp)sl).turnOn(true);
             }
         }
@@ -33,12 +32,8 @@ public class Host {
     }
 
     public void turnLampsOff() {
-        ElectricityConsumer[] var1 = this.consumers;
-        int var2 = var1.length;
-
-        for(int var3 = 0; var3 < var2; ++var3) {
-            ElectricityConsumer sl = var1[var3];
-            if (sl != null && sl instanceof SmartLamp) {
+        for(ElectricityConsumer sl : consumers) {
+            if (sl instanceof SmartLamp) {
                 ((SmartLamp)sl).turnOff(false);
             }
         }
@@ -46,51 +41,40 @@ public class Host {
     }
 
     public void turnCamerasOn() {
-        ElectricityConsumer[] var1 = this.consumers;
-        int var2 = var1.length;
-
-        for(int var3 = 0; var3 < var2; ++var3) {
-            ElectricityConsumer sc = var1[var3];
-            if (sc != null && sc instanceof SmartSecurityCamera) {
+        for(ElectricityConsumer sc : consumers) {
+            if (sc instanceof SmartSecurityCamera) {
                 ((SmartSecurityCamera)sc).turnOn(true);
             }
         }
-
     }
 
     public void turnCamerasOff() {
-        ElectricityConsumer[] var1 = this.consumers;
-        int var2 = var1.length;
-
-        for(int var3 = 0; var3 < var2; ++var3) {
-            ElectricityConsumer sc = var1[var3];
-            if (sc != null && sc instanceof SmartSecurityCamera) {
+        for(ElectricityConsumer sc : consumers) {
+            if ( sc instanceof SmartSecurityCamera) {
                 ((SmartSecurityCamera)sc).turnOff(false);
             }
         }
 
     }
 
+    /**
+     * Starts the filming of all camera objects
+     */
     public void startFilming() {
-        ElectricityConsumer[] var1 = this.consumers;
-        int var2 = var1.length;
-
-        for(int var3 = 0; var3 < var2; ++var3) {
-            ElectricityConsumer sc = var1[var3];
-            if (sc != null && sc instanceof SmartSecurityCamera) {
+        for(ElectricityConsumer sc : consumers) {
+            if (sc instanceof SmartSecurityCamera) {
                 ((SmartSecurityCamera)sc).startFilming(true);
             }
         }
 
     }
 
+    /**
+     * Stops the filming of all camera objects
+     */
     public void stopFilming() {
-        ElectricityConsumer[] var1 = this.consumers;
-        int var2 = var1.length;
-
-        for(int var3 = 0; var3 < var2; ++var3) {
-            ElectricityConsumer sc = var1[var3];
-            if (sc != null && sc instanceof SmartSecurityCamera) {
+        for(ElectricityConsumer sc : consumers) {
+            if (sc instanceof SmartSecurityCamera) {
                 ((SmartSecurityCamera)sc).stopFilming(false);
             }
         }
@@ -98,12 +82,8 @@ public class Host {
     }
 
     public void turnThermostatsOn() {
-        ElectricityConsumer[] var1 = this.consumers;
-        int var2 = var1.length;
-
-        for(int var3 = 0; var3 < var2; ++var3) {
-            ElectricityConsumer st = var1[var3];
-            if (st != null && st instanceof SmartThermostat) {
+        for(ElectricityConsumer st : consumers) {
+            if (st instanceof SmartThermostat) {
                 ((SmartThermostat)st).turnOn(true);
             }
         }
@@ -111,24 +91,19 @@ public class Host {
     }
 
     public void turnThermostatsOff() {
-        ElectricityConsumer[] var1 = this.consumers;
-        int var2 = var1.length;
-
-        for(int var3 = 0; var3 < var2; ++var3) {
-            ElectricityConsumer st = var1[var3];
-            if (st != null && st instanceof SmartThermostat) {
+        for(ElectricityConsumer st : consumers) {
+            if (st instanceof SmartThermostat) {
                 ((SmartThermostat)st).turnOff(false);
             }
         }
 
     }
 
+    /**
+     * checks array an returns the state of SmartLamp objects in the array
+     */
     public void getLampState() {
-        ElectricityConsumer[] var1 = this.consumers;
-        int var2 = var1.length;
-
-        for(int var3 = 0; var3 < var2; ++var3) {
-            ElectricityConsumer sl = var1[var3];
+        for(ElectricityConsumer sl : consumers) {
             if (sl instanceof SmartLamp) {
                 ((SmartLamp)sl).getState();
             }
@@ -136,25 +111,22 @@ public class Host {
 
     }
 
-    public void geCameraState() {
-        ElectricityConsumer[] var1 = this.consumers;
-        int var2 = var1.length;
-
-        for(int var3 = 0; var3 < var2; ++var3) {
-            ElectricityConsumer sc = var1[var3];
+    /**
+     * checks array an returns the state of SmartCamera objects in the array
+     */
+    public void getCameraState() {
+        for(ElectricityConsumer sc : consumers) {
             if (sc instanceof SmartSecurityCamera) {
                 ((SmartSecurityCamera)sc).getState();
             }
         }
-
     }
 
+    /**
+     * checks array an returns the state of SmartThermostat objects in the array
+     */
     public void getThermostatState() {
-        ElectricityConsumer[] var1 = this.consumers;
-        int var2 = var1.length;
-
-        for(int var3 = 0; var3 < var2; ++var3) {
-            ElectricityConsumer st = var1[var3];
+        for(ElectricityConsumer st : consumers) {
             if (st instanceof SmartThermostat) {
                 ((SmartThermostat)st).getState();
             }
@@ -162,18 +134,17 @@ public class Host {
 
     }
 
+    /**
+     * float totalConsumption stores the consumption value for all the devices in the array
+     * @return the value
+     */
     public float calculateConsumption() {
         float totalConsumption = 0.0F;
-        ElectricityConsumer[] var2 = this.consumers;
-        int var3 = var2.length;
-
-        for(int var4 = 0; var4 < var3; ++var4) {
-            ElectricityConsumer ec = var2[var4];
+        for(ElectricityConsumer ec : consumers) {
             if (ec != null) {
-                totalConsumption = ConsumptionCalculator.calculateConsumption(this.consumers);
+                totalConsumption = ConsumptionCalculator.calculateConsumption(consumers);
             }
         }
-
         return totalConsumption;
     }
 }

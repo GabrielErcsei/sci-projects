@@ -6,11 +6,8 @@ public class ConsumptionCalculator {
 
     public static float calculateConsumption(ElectricityConsumer[] consumers) {
         float consumption = 0.0F;
-        ElectricityConsumer[] var2 = consumers;
-        int var3 = consumers.length;
 
-        for(int var4 = 0; var4 < var3; ++var4) {
-            ElectricityConsumer ec = var2[var4];
+        for(ElectricityConsumer ec : consumers) {
             if (ec != null) {
                 consumption += ec.calculateConsumption();
             }
