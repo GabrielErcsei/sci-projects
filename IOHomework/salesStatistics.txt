@@ -1,0 +1,15 @@
+Best selling products
+1. Iphone X - 77 units
+2. Windows Phone - 22 units
+3. PC - 22 units
+4. Huawei P8Lite - 12 units
+...
+Top Returning Customers
+1. customer2  -  2 orders
+2. customer1  -  2 orders
+3. customer3  -  1 orders
+...
+Top Customers
+1. customer1 - $44150.0
+2. customer2 - $5830.0
+3. customer3 - $1540.0
